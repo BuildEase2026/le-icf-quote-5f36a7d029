@@ -215,7 +215,7 @@
    "note": "General arrangements, elevations and a section from the quotation model, the Nudura proposal, the artic load plans and pallet stack sheets, and the extra-information take-off. For pricing, not for construction.",
    "zip": {
     "file": "downloads/ES26-081 Quotation documents.zip",
-    "bytes": 1626047,
+    "bytes": 1629439,
     "count": 10
    },
    "docs": [
@@ -322,9 +322,9 @@
      "id": "ES26-081-XI-01",
      "title": "Extra information take-off",
      "file": "docs/drawings/ES26-081-XI-01 Extra information take-off.pdf",
-     "pages": 16,
+     "pages": 17,
      "thumb": "thumbs/ES26-081-XI-01.png",
-     "bytes": 724836,
+     "bytes": 738352,
      "number": "ES26-081-XI-01",
      "view": "stage-7",
      "view_opts": {}
@@ -336,7 +336,7 @@
  "isolate_stages": false,
  "download_all": {
   "file": "downloads/ES26-081 Lon Eilian, Caernarfon - Quotation Q01.zip",
-  "bytes": 1626127,
+  "bytes": 1629519,
   "count": 10,
   "title": "Download everything"
  }
