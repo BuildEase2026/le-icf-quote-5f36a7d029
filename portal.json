@@ -212,11 +212,11 @@
   {
    "id": "drawings",
    "title": "Quotation documents",
-   "note": "General arrangements, elevations and a section from the quotation model, the Nudura proposal, the artic load plans and pallet stack sheets, and the extra-information take-off. For pricing, not for construction.",
+   "note": "General arrangements (ICF walls and timber partitions), elevations, a section, the roof truss layout and truss profiles, the first-floor joist layout and joist profiles (for supplier quotes), the Nudura proposal, the artic load plans and pallet stack sheets, and the extra-information take-off. For pricing, not for construction.",
    "zip": {
     "file": "downloads/ES26-081 Quotation documents.zip",
-    "bytes": 1629439,
-    "count": 10
+    "bytes": 1853968,
+    "count": 14
    },
    "docs": [
     {
@@ -236,7 +236,7 @@
      "file": "docs/drawings/ES26-081-GA-02 Ground Floor ICF General Arrangement.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-GA-02.png",
-     "bytes": 67803,
+     "bytes": 69120,
      "number": "ES26-081-GA-02",
      "view": "stage-3",
      "view_opts": {}
@@ -247,7 +247,7 @@
      "file": "docs/drawings/ES26-081-GA-03 First Floor ICF General Arrangement.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-GA-03.png",
-     "bytes": 63872,
+     "bytes": 65164,
      "number": "ES26-081-GA-03",
      "view": "stage-5",
      "view_opts": {}
@@ -280,9 +280,31 @@
      "file": "docs/drawings/ES26-081-SE-01 Section A-A.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-SE-01.png",
-     "bytes": 91437,
+     "bytes": 91440,
      "number": "ES26-081-SE-01",
      "view": "stage-7",
+     "view_opts": {}
+    },
+    {
+     "id": "ES26-081-FL-01",
+     "title": "First Floor Layout",
+     "file": "docs/drawings/ES26-081-FL-01 First Floor Layout.pdf",
+     "pages": 1,
+     "thumb": "thumbs/ES26-081-FL-01.png",
+     "bytes": 81946,
+     "number": "ES26-081-FL-01",
+     "view": "stage-4",
+     "view_opts": {}
+    },
+    {
+     "id": "ES26-081-FL-02",
+     "title": "Floor Joist Profiles",
+     "file": "docs/drawings/ES26-081-FL-02 Floor Joist Profiles.pdf",
+     "pages": 1,
+     "thumb": "thumbs/ES26-081-FL-02.png",
+     "bytes": 58090,
+     "number": "ES26-081-FL-02",
+     "view": "stage-4",
      "view_opts": {}
     },
     {
@@ -319,6 +341,28 @@
      "view_opts": {}
     },
     {
+     "id": "ES26-081-RF-01",
+     "title": "Roof Truss Layout",
+     "file": "docs/drawings/ES26-081-RF-01 Roof Truss Layout.pdf",
+     "pages": 1,
+     "thumb": "thumbs/ES26-081-RF-01.png",
+     "bytes": 79518,
+     "number": "ES26-081-RF-01",
+     "view": "stage-6",
+     "view_opts": {}
+    },
+    {
+     "id": "ES26-081-RF-02",
+     "title": "Truss Profiles",
+     "file": "docs/drawings/ES26-081-RF-02 Truss Profiles.pdf",
+     "pages": 1,
+     "thumb": "thumbs/ES26-081-RF-02.png",
+     "bytes": 58219,
+     "number": "ES26-081-RF-02",
+     "view": "stage-6",
+     "view_opts": {}
+    },
+    {
      "id": "ES26-081-XI-01",
      "title": "Extra information take-off",
      "file": "docs/drawings/ES26-081-XI-01 Extra information take-off.pdf",
@@ -336,8 +380,8 @@
  "isolate_stages": false,
  "download_all": {
   "file": "downloads/ES26-081 Lon Eilian, Caernarfon - Quotation Q01.zip",
-  "bytes": 1629519,
-  "count": 10,
+  "bytes": 1854080,
+  "count": 14,
   "title": "Download everything"
  }
 }
