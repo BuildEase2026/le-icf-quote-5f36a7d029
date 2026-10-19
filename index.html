@@ -463,6 +463,61 @@ let focus = false;                       // structural focus (I-151): ICF ghoste
 const FOCUS = P.focus || null;
 const ghostMat = m => !!FOCUS && FOCUS.ghost.some(p => p.endsWith("*") ? (m.name || "").startsWith(p.slice(0, -1)) : (m.name || "") === p);
 const focusing = () => focus && !!FOCUS && view && view.kind === "stage" && (FOCUS.stages || []).includes(view.n);
+const TOGGLES = (P.toggles || []).map(t => ({ ...t, on: !!t.default }));
+const togMatch = (t, m) => (t.materials || []).some(p => p.endsWith("*") ? (m.name || "").startsWith(p.slice(0, -1)) : (m.name || "") === p);
+const togHidden = m => TOGGLES.some(t => !t.on && togMatch(t, m));
+function edgeSplit(r) {                    // per edge mesh: which toggle owns each segment (-1 = none)
+  if (r.edgeTog !== undefined) return r.edgeTog;
+  r.edgeTog = null;
+  if (!TOGGLES.length) return null;
+  // vertex keys on a 3 mm grid, looked up with the 26 neighbouring cells: the GLBs are Draco-quantised per mesh
+  // (14 bits over the model, ~1 mm), so an edge end and the face corner it outlines need not be bit-identical
+  const G = 0.003, cell = v => [Math.floor(v.x / G), Math.floor(v.y / G), Math.floor(v.z / G)];
+  const k = v => cell(v).join(",");
+  const near = (set, c) => { for (let a = -1; a <= 1; a++) for (let b = -1; b <= 1; b++) for (let d = -1; d <= 1; d++)
+    if (set.has((c[0] + a) + "," + (c[1] + b) + "," + (c[2] + d))) return true; return false; };
+  const own = TOGGLES.map(() => new Set()), other = new Set(), v = new THREE.Vector3();
+  r.group.updateMatrixWorld(true);
+  r.group.traverse(o => {
+    if (!o.isMesh || o.userData.edge) return;
+    const ms = Array.isArray(o.material) ? o.material : [o.material];
+    const ti = TOGGLES.findIndex(t => ms.every(m => togMatch(t, m)));
+    const p = o.geometry.attributes.position; if (!p) return;
+    const into = ti >= 0 ? own[ti] : other;
+    for (let i = 0; i < p.count; i++) into.add(k(v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld)));
+  });
+  if (!own.some(x => x.size)) return null;
+  const out = [];
+  r.group.traverse(o => {
+    if (!o.userData.edge || !o.geometry || !o.geometry.attributes.position) return;
+    const g = o.geometry, p = g.attributes.position, idx = g.index, n = (idx ? idx.count : p.count) >> 1;
+    const cells = []; for (let i = 0; i < p.count; i++) cells.push(cell(v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld)));
+    const seg = new Int16Array(n);
+    for (let s = 0; s < n; s++) {
+      const a = cells[idx ? idx.getX(2 * s) : 2 * s], b = cells[idx ? idx.getX(2 * s + 1) : 2 * s + 1];
+      seg[s] = (near(other, a) && near(other, b)) ? -1 : own.findIndex(x => near(x, a) && near(x, b));
+    }
+    out.push({ o, full: g, seg, cache: {} });
+  });
+  return r.edgeTog = out.length ? out : null;
+}
+function applyEdgeToggles(r) {
+  const es = edgeSplit(r); if (!es) return;
+  const off = TOGGLES.map(t => !t.on), key = off.map(b => b ? 1 : 0).join("");
+  for (const e of es) {
+    if (!off.some((b, i) => b && e.seg.includes(i))) { e.o.geometry = e.full; continue; }
+    if (!e.cache[key]) {
+      const g = e.full, idx = g.index, keep = [];
+      for (let s = 0; s < e.seg.length; s++)
+        if (e.seg[s] < 0 || !off[e.seg[s]]) keep.push(idx ? idx.getX(2 * s) : 2 * s, idx ? idx.getX(2 * s + 1) : 2 * s + 1);
+      const ng = new THREE.BufferGeometry();
+      for (const [name, a] of Object.entries(g.attributes)) ng.setAttribute(name, a);
+      ng.setIndex(keep); ng.boundingBox = g.boundingBox; ng.boundingSphere = g.boundingSphere;
+      e.cache[key] = ng;
+    }
+    e.o.geometry = e.cache[key];
+  }
+}
 
 function prepare(root) {
   root.traverse(o => {
@@ -492,6 +547,7 @@ function prepare(root) {
 function styleGroup(r) {
   const faded = fade && view.kind === "stage" && r.stage < view.n;
   const fo = focusing();
+  applyEdgeToggles(r);
   if (r.ghostShare === undefined) {          // how much of this stage is ICF: its edges ghost with it
     let g = 0, t = 0;
     r.group.traverse(o => { if (!o.isMesh) return; for (const m of (Array.isArray(o.material) ? o.material : [o.material])) { t++; if (ghostMat(m)) g++; } });
@@ -505,6 +561,7 @@ function styleGroup(r) {
       if (faded) { m.transparent = true; m.opacity = 0.18 * b.opacity; m.depthWrite = false; }
       else if (fo && ghostMat(m)) { m.transparent = true; m.opacity = FOCUS.opacity * b.opacity; m.depthWrite = false; }
       else { m.transparent = b.transparent; m.opacity = b.opacity; m.depthWrite = !b.transparent; }
+      m.visible = !togHidden(m);         // portal.toggles
       m.needsUpdate = true;
     }
   });
@@ -577,6 +634,8 @@ function tools() {
   if (view.kind === "stage" && view.n > 1) add("Fade earlier stages", fade, () => { fade = !fade; applyVisibility(); tools(); });
   if (view.kind === "stage" && FOCUS && (FOCUS.stages || []).includes(view.n))
     add("Structural focus", focus, () => { focus = !focus; applyVisibility(); tools(); });
+  for (const tg of TOGGLES) if (!tg.stages || !tg.stages.length || view.kind !== "stage" || tg.stages.some(s => ISO ? s === view.n : s <= view.n))
+    add(`${tg.label}: ${tg.on ? "ON" : "OFF"}`, tg.on, () => { tg.on = !tg.on; applyVisibility(); tools(); }, "part");
   add("Edges", edges, () => { edges = !edges; applyVisibility(); tools(); });
   add("Reset view", null, () => frame());
   const drawing = P.groups.flatMap(g => g.docs.map(d => [g, d])).find(([g, d]) => d.view === view.id);

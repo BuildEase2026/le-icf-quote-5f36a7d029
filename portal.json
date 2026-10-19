@@ -30,8 +30,8 @@
    "id": "stage-3",
    "kind": "stage",
    "n": 3,
-   "title": "Ground-floor ICF and porch steel",
-   "desc": "Ground-floor walls, six courses to 2,743 mm, with the window and door openings, and the porch steel (UKB 356x171x45, TLS proposed) pocketed into the stair walls and the party wall.",
+   "title": "Ground-floor ICF, partitions and porch steel",
+   "desc": "Ground-floor walls, six courses to 2,743 mm, with the window and door openings, and the porch steel (UKB 356x171x45, TLS proposed) pocketed into the stair walls and the party wall. Ground-floor timber stud partitions (38x89 C16).",
    "focus": false
   },
   {
@@ -46,8 +46,8 @@
    "id": "stage-5",
    "kind": "stage",
    "n": 5,
-   "title": "First-floor ICF",
-   "desc": "First-floor walls to the eaves at 5,250 mm, the gables to the roof line and the party wall carried up to the rafters.",
+   "title": "First-floor ICF and partitions",
+   "desc": "First-floor walls to the eaves at 5,250 mm, the gables to the roof line and the party wall carried up to the rafters. First-floor timber stud partitions (38x89 C16).",
    "focus": false
   },
   {
@@ -62,8 +62,8 @@
    "id": "stage-7",
    "kind": "stage",
    "n": 7,
-   "title": "Windows, doors and partitions",
-   "desc": "UPVC windows and doors set behind the 25 mm head and jamb overfly, and the internal timber stud partitions with their noggins and bathroom pattressing.",
+   "title": "Windows, doors and partition linings",
+   "desc": "UPVC windows and doors set behind the 25 mm head and jamb overfly, the bathroom pattress ply and the partition noggins.",
    "focus": false
   },
   {
@@ -125,7 +125,7 @@
      "glb": "stage-1.glb",
      "part": null,
      "label": null,
-     "bytes": 407988
+     "bytes": 407992
     }
    ]
   },
@@ -144,14 +144,14 @@
   },
   {
    "n": 3,
-   "title": "Ground-floor ICF and porch steel",
-   "desc": "Ground-floor walls, six courses to 2,743 mm, with the window and door openings, and the porch steel (UKB 356x171x45, TLS proposed) pocketed into the stair walls and the party wall.",
+   "title": "Ground-floor ICF, partitions and porch steel",
+   "desc": "Ground-floor walls, six courses to 2,743 mm, with the window and door openings, and the porch steel (UKB 356x171x45, TLS proposed) pocketed into the stair walls and the party wall. Ground-floor timber stud partitions (38x89 C16).",
    "files": [
     {
      "glb": "stage-3.glb",
      "part": null,
      "label": null,
-     "bytes": 1084472
+     "bytes": 1177352
     }
    ]
   },
@@ -170,14 +170,14 @@
   },
   {
    "n": 5,
-   "title": "First-floor ICF",
-   "desc": "First-floor walls to the eaves at 5,250 mm, the gables to the roof line and the party wall carried up to the rafters.",
+   "title": "First-floor ICF and partitions",
+   "desc": "First-floor walls to the eaves at 5,250 mm, the gables to the roof line and the party wall carried up to the rafters. First-floor timber stud partitions (38x89 C16).",
    "files": [
     {
      "glb": "stage-5.glb",
      "part": null,
      "label": null,
-     "bytes": 1014296
+     "bytes": 1111272
     }
    ]
   },
@@ -190,20 +190,20 @@
      "glb": "stage-6.glb",
      "part": null,
      "label": null,
-     "bytes": 102956
+     "bytes": 99364
     }
    ]
   },
   {
    "n": 7,
-   "title": "Windows, doors and partitions",
-   "desc": "UPVC windows and doors set behind the 25 mm head and jamb overfly, and the internal timber stud partitions with their noggins and bathroom pattressing.",
+   "title": "Windows, doors and partition linings",
+   "desc": "UPVC windows and doors set behind the 25 mm head and jamb overfly, the bathroom pattress ply and the partition noggins.",
    "files": [
     {
      "glb": "stage-7.glb",
      "part": null,
      "label": null,
-     "bytes": 460564
+     "bytes": 261408
     }
    ]
   }
@@ -215,8 +215,8 @@
    "note": "General arrangements (ICF walls and timber partitions), elevations, a section, the roof truss layout and truss profiles, the first-floor joist layout and joist profiles (for supplier quotes), the Nudura proposal, the artic load plans and pallet stack sheets, and the extra-information take-off. For pricing, not for construction.",
    "zip": {
     "file": "downloads/ES26-081 Quotation documents.zip",
-    "bytes": 1853968,
-    "count": 14
+    "bytes": 2017192,
+    "count": 16
    },
    "docs": [
     {
@@ -225,7 +225,7 @@
      "file": "docs/drawings/ES26-081-GA-01 Footing ICF General Arrangement.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-GA-01.png",
-     "bytes": 58338,
+     "bytes": 58638,
      "number": "ES26-081-GA-01",
      "view": "stage-1",
      "view_opts": {}
@@ -236,7 +236,7 @@
      "file": "docs/drawings/ES26-081-GA-02 Ground Floor ICF General Arrangement.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-GA-02.png",
-     "bytes": 69120,
+     "bytes": 68095,
      "number": "ES26-081-GA-02",
      "view": "stage-3",
      "view_opts": {}
@@ -247,7 +247,7 @@
      "file": "docs/drawings/ES26-081-GA-03 First Floor ICF General Arrangement.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-GA-03.png",
-     "bytes": 65164,
+     "bytes": 64222,
      "number": "ES26-081-GA-03",
      "view": "stage-5",
      "view_opts": {}
@@ -258,7 +258,7 @@
      "file": "docs/drawings/ES26-081-EL-01 North and South Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-EL-01.png",
-     "bytes": 516130,
+     "bytes": 518540,
      "number": "ES26-081-EL-01",
      "view": "elev-N",
      "view_opts": {}
@@ -269,7 +269,7 @@
      "file": "docs/drawings/ES26-081-EL-02 East and West Elevations.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-EL-02.png",
-     "bytes": 179089,
+     "bytes": 179459,
      "number": "ES26-081-EL-02",
      "view": "elev-E",
      "view_opts": {}
@@ -280,7 +280,7 @@
      "file": "docs/drawings/ES26-081-SE-01 Section A-A.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-SE-01.png",
-     "bytes": 91440,
+     "bytes": 91872,
      "number": "ES26-081-SE-01",
      "view": "stage-7",
      "view_opts": {}
@@ -291,7 +291,7 @@
      "file": "docs/drawings/ES26-081-FL-01 First Floor Layout.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-FL-01.png",
-     "bytes": 81946,
+     "bytes": 82496,
      "number": "ES26-081-FL-01",
      "view": "stage-4",
      "view_opts": {}
@@ -302,7 +302,7 @@
      "file": "docs/drawings/ES26-081-FL-02 Floor Joist Profiles.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-FL-02.png",
-     "bytes": 58090,
+     "bytes": 58396,
      "number": "ES26-081-FL-02",
      "view": "stage-4",
      "view_opts": {}
@@ -346,7 +346,7 @@
      "file": "docs/drawings/ES26-081-RF-01 Roof Truss Layout.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-RF-01.png",
-     "bytes": 79518,
+     "bytes": 79383,
      "number": "ES26-081-RF-01",
      "view": "stage-6",
      "view_opts": {}
@@ -357,18 +357,40 @@
      "file": "docs/drawings/ES26-081-RF-02 Truss Profiles.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-RF-02.png",
-     "bytes": 58219,
+     "bytes": 58546,
      "number": "ES26-081-RF-02",
      "view": "stage-6",
      "view_opts": {}
     },
     {
+     "id": "ES26-081-TF-01",
+     "title": "Ground Floor Timber Partitions",
+     "file": "docs/drawings/ES26-081-TF-01 Ground Floor Timber Partitions.pdf",
+     "pages": 1,
+     "thumb": "thumbs/ES26-081-TF-01.png",
+     "bytes": 173138,
+     "number": "ES26-081-TF-01",
+     "view": "stage-3",
+     "view_opts": {}
+    },
+    {
+     "id": "ES26-081-TF-02",
+     "title": "First Floor Timber Partitions",
+     "file": "docs/drawings/ES26-081-TF-02 First Floor Timber Partitions.pdf",
+     "pages": 1,
+     "thumb": "thumbs/ES26-081-TF-02.png",
+     "bytes": 172188,
+     "number": "ES26-081-TF-02",
+     "view": "stage-5",
+     "view_opts": {}
+    },
+    {
      "id": "ES26-081-XI-01",
-     "title": "Extra information take-off",
-     "file": "docs/drawings/ES26-081-XI-01 Extra information take-off.pdf",
-     "pages": 17,
+     "title": "BOQ package - ancillary trades",
+     "file": "docs/drawings/ES26-081-XI-01 BOQ package - ancillary trades.pdf",
+     "pages": 16,
      "thumb": "thumbs/ES26-081-XI-01.png",
-     "bytes": 738352,
+     "bytes": 98636,
      "number": "ES26-081-XI-01",
      "view": "stage-7",
      "view_opts": {}
@@ -378,10 +400,22 @@
  ],
  "focus": null,
  "isolate_stages": false,
+ "toggles": [
+  {
+   "label": "Floor deck",
+   "materials": [
+    "Egger Protect P5 deck"
+   ],
+   "default": false,
+   "stages": [
+    4
+   ]
+  }
+ ],
  "download_all": {
   "file": "downloads/ES26-081 Lon Eilian, Caernarfon - Quotation Q01.zip",
-  "bytes": 1854080,
-  "count": 14,
+  "bytes": 2017320,
+  "count": 16,
   "title": "Download everything"
  }
 }
