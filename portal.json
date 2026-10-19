@@ -215,7 +215,7 @@
    "note": "General arrangements (ICF walls and timber partitions), elevations, a section, the roof truss layout and truss profiles, the first-floor joist layout and joist profiles (for supplier quotes), the Nudura proposal, the artic load plans and pallet stack sheets, and the extra-information take-off. For pricing, not for construction.",
    "zip": {
     "file": "downloads/ES26-081 Quotation documents.zip",
-    "bytes": 2017192,
+    "bytes": 1883763,
     "count": 16
    },
    "docs": [
@@ -368,7 +368,7 @@
      "file": "docs/drawings/ES26-081-TF-01 Ground Floor Timber Partitions.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-TF-01.png",
-     "bytes": 173138,
+     "bytes": 75687,
      "number": "ES26-081-TF-01",
      "view": "stage-3",
      "view_opts": {}
@@ -379,7 +379,7 @@
      "file": "docs/drawings/ES26-081-TF-02 First Floor Timber Partitions.pdf",
      "pages": 1,
      "thumb": "thumbs/ES26-081-TF-02.png",
-     "bytes": 172188,
+     "bytes": 74732,
      "number": "ES26-081-TF-02",
      "view": "stage-5",
      "view_opts": {}
@@ -388,12 +388,18 @@
      "id": "ES26-081-XI-01",
      "title": "BOQ package - ancillary trades",
      "file": "docs/drawings/ES26-081-XI-01 BOQ package - ancillary trades.pdf",
-     "pages": 16,
+     "pages": 20,
      "thumb": "thumbs/ES26-081-XI-01.png",
-     "bytes": 98636,
+     "bytes": 130139,
      "number": "ES26-081-XI-01",
      "view": "stage-7",
      "view_opts": {}
+    }
+   ],
+   "downloads": [
+    {
+     "file": "downloads/ES26-081 BOQ Package.xlsx",
+     "title": "BOQ package - ancillary trades (Excel, live rates) (0.2 MB)"
     }
    ]
   }
@@ -414,8 +420,8 @@
  ],
  "download_all": {
   "file": "downloads/ES26-081 Lon Eilian, Caernarfon - Quotation Q01.zip",
-  "bytes": 2017320,
-  "count": 16,
+  "bytes": 1957096,
+  "count": 17,
   "title": "Download everything"
  }
 }
