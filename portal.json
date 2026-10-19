@@ -215,7 +215,7 @@
    "note": "General arrangements (ICF walls and timber partitions), elevations, a section, the roof truss layout and truss profiles, the first-floor joist layout and joist profiles (for supplier quotes), the Nudura proposal, the artic load plans and pallet stack sheets, and the extra-information take-off. For pricing, not for construction.",
    "zip": {
     "file": "downloads/ES26-081 Quotation documents.zip",
-    "bytes": 1883763,
+    "bytes": 1883872,
     "count": 16
    },
    "docs": [
@@ -390,7 +390,7 @@
      "file": "docs/drawings/ES26-081-XI-01 BOQ package - ancillary trades.pdf",
      "pages": 20,
      "thumb": "thumbs/ES26-081-XI-01.png",
-     "bytes": 130139,
+     "bytes": 130255,
      "number": "ES26-081-XI-01",
      "view": "stage-7",
      "view_opts": {}
@@ -420,7 +420,7 @@
  ],
  "download_all": {
   "file": "downloads/ES26-081 Lon Eilian, Caernarfon - Quotation Q01.zip",
-  "bytes": 1957096,
+  "bytes": 1957324,
   "count": 17,
   "title": "Download everything"
  }
